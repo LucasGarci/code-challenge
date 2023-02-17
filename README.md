@@ -74,7 +74,7 @@ src/ \
 ------------------------reducers.js \
 
 
-Como en cada módulo hay un initial_state y un storage luego uso un combinedReducer a la altura de app/ para seguir el principio de react de un solo origen de datos y propagación en cascada
+Como en cada módulo hay un initial_state y un storage luego uso un combinedReducer a la altura de app/ para seguir el principio de react de un solo origen de datos y propagación en cascada.
 
 A la altura de src/ tambien suelo colocar un archivo que yo llamo providersGate.js para poner el context provider, el storage provider de redux y el persisGate de redux persist
 
