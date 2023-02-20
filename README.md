@@ -40,25 +40,24 @@ Hay algunos comentarios a lo largo del código. Se pueden buacar mediante la pal
 He aprovechado para usar ErrorBoundary, Fragments, Lazy Loading, Suspense y algún hook simple aunque algunas de estas características no eran necesarias.
 No he usado otras características de react como el contexto o las referencias en este proyecto pero si las he usado anteriormente.
 
-He distribuido agrupando toda la persistencia de la App en un mismo directorio pues se trata de un proyecto muy pequeño. Aunque personalmente me gusta poner las acciones, initualState y reductores de cada componente compartiendo directorio con dicho componente.
+Había distribuido la app agrupando toda la persistencia de en un mismo directorio pues se trata de un proyecto muy pequeño. Aunque personalmente me gustaba poner las acciones, initualState y reductores de cada componente compartiendo directorio con dicho componente, veo que ahora con createSlice() se simplifica mucho el uso de redux y por ende su organización permitiendo crear acctiones, reductores a la vez.
 
 Soy consciente de que hay muchas cosas que no he puesto en el proyecto y podrían estar:
-- Tests (y TDD)
+- Tests (y/o TDD)
 - Bbdd (WIP)
 - Autentificación
 - Añadir Flow y comprobar tipado de IO (Flow.js y TypeScript son opciones excelentes)
 - react- navigation or similar.
-- Persistencia de datos (ej: redux: actions, reducers and storage y un initialState)
 
-Una estructura que acostumbro a hacer es la siguiente
+Una estructura que acostumbraba a hacer es la siguiente
 
 src/ \
 ----app/ \
 --------asets/images/ \
 --------lib/ \
 ------------utils/ \
-------------styledComponents/ \
---------containers \
+------------styledOrCustomComponents/ \
+--------containersOrScreens \
 --------navigation \
 ------------router.js \
 ------------navBar.js \
@@ -74,8 +73,6 @@ src/ \
 ------------------------reducers.js \
 
 
-Como en cada módulo hay un initial_state y un storage luego uso un combinedReducer a la altura de app/ para seguir el principio de react de un solo origen de datos y propagación en cascada.
+Como en cada módulo hay un initial_state y un storage luego uso un combinedReducer a la altura de app/ para seguir el principio de redux + react de un solo origen de datos y propagación en cascada.
 
-A la altura de src/ tambien suelo colocar un archivo que yo llamo providersGate.js para poner el context provider, el storage provider de redux y el persisGate de redux persist
-
-Por otro lado en la raiz de la app seguiría estableciendo un combinedReducer que me diera una visión general del total de la aplicación y un appReducer y appActions para los datos que sean comunes a toda la App.
+A la altura de src/ tambien suelo colocar un archivo que yo llamo providersGate.js para poner el context provider, el storage provider de redux y el persisGate de redux persist y algun provider para métricas y analítica.
