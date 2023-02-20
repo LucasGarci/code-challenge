@@ -64,6 +64,14 @@ const Metrics = () => {
   return (
     //Uso del frafment no es necesario aquí pero es útil para agrupar varios componentes sin crear nuevos niveles de anidación
     <>
+      <div style={{ margin: 'auto', maxWidth: 900 }} >
+        <p>
+          Este es un ejemplo de código en react para enviar datos mediante una request y procesarlos en un servidor categorizándolos usando Machine Learning mediante un modelo simple de aprendizaje no supervisado (KNN).
+        </p>
+        <p>
+          El modelo de KNN (K-Nearest Neighbors) es comunmente utilizado para la clasificación y regresión de datos. El modelo se basa en la idea de que los puntos de datos que están cerca entre sí en un espacio de características (por ejemplo, un conjunto de características numéricas que describen cada punto) son similares entre sí y probablemente pertenecen a la misma clase. "Si sus características parecen las de un gato, será un gato"
+        </p>
+      </div>
       <div style={{ margin: 'auto', maxWidth: 500 }}>
         <ScatterChart metrics={metrics} />
       </div>
