@@ -10,17 +10,18 @@ const Counter = () => {
     return (
         <>
             <Button
-                aria-label="Increment value"
-                onClick={() => dispatch(increment())}
-            >
-                +
-            </Button>
-            <span>{count}</span>
-            <Button
                 aria-label="Decrement value"
                 onClick={() => count > 1 ? dispatch(decrement()) : null}
             >
                 -
+            </Button>
+            <span>{count}</span>
+
+            <Button
+                aria-label="Increment value"
+                onClick={() => dispatch(increment())}
+            >
+                +
             </Button>
         </>
     )
