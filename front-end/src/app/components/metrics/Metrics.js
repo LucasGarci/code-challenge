@@ -24,8 +24,12 @@ const Metrics = () => {
   }, [])
 
   const addRandomMetric = () => {
-    const newMetric = createRandomMetric()
-    setMetrics([...metrics, newMetric])
+    let newMetrics = []
+    for (let i = 0; i < count; i++) {
+      const one_new_metric = createRandomMetric()
+      newMetrics.push(one_new_metric)
+    }
+    setMetrics([...metrics, ...newMetrics])
   }
 
   return (
