@@ -35,7 +35,9 @@ const Metrics = () => {
   return (
     //Uso del frafment no es necesario aquí pero es útil para agrupar varios componentes sin crear nuevos niveles de anidación
     <>
+
       <div style={{ margin: 'auto', maxWidth: 900 }} >
+        <h2>React KNN example</h2>
         <p>
           Este es un ejemplo de código en react para enviar datos mediante una request y procesarlos en un servidor categorizándolos usando Machine Learning mediante un modelo simple de aprendizaje no supervisado (KNN).
         </p>

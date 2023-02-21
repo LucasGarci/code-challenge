@@ -1,6 +1,7 @@
 import React from 'react';
 import { Scatter } from "react-chartjs-2";
 
+
 import {
     Chart as ChartJS,
     LinearScale,
@@ -12,6 +13,11 @@ import {
 
 ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
 
+const checkParams = (metrics) => {
+    metrics.forEach(element => {
+        if (!element.group || !element.modulesUsed || !element.usageTime) throw Error("Bad metric structure")
+    });
+}
 
 const chartOptions = {
     scales: {
@@ -22,6 +28,7 @@ const chartOptions = {
 };
 
 const metricsToCharData = (metrics) => {
+    checkParams(metrics)
     const group_0 = metrics.filter(metric => metric.group === 0)
     const group_1 = metrics.filter(metric => metric.group === 1)
     const group_2 = metrics.filter(metric => metric.group === 2)
@@ -60,6 +67,8 @@ const metricsToCharData = (metrics) => {
 
 const ScatterChart = (props) => {
     const metrics = props.metrics
+    if (!Array.isArray(metrics)) throw Error("Metric atribute array is mandatory")
+
     const chartData = metricsToCharData(metrics)
     return props?.metrics ? <Scatter options={chartOptions} data={chartData} /> : null
 
