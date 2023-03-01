@@ -46,8 +46,8 @@ Soy consciente de que hay muchas cosas que no he puesto en el proyecto y podría
 - Tests (y/o TDD)
 - Bbdd (WIP)
 - Autentificación
-- Añadir Flow y comprobar tipado de IO (Flow.js y TypeScript son opciones excelentes)
-- react- navigation or similar.
+- Añadir Flow y comprobar tipado de Input Output (Flow.js y TypeScript son opciones excelentes)
+- react-navigation or similar.
 
 Una estructura que acostumbraba a hacer es la siguiente
 
